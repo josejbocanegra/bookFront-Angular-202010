@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: '157.253.238.75',
+  port: '8084',
+  appName: 'frontstepbystep-api',
+  rootApi: 'api',
+  baseUrl:`http://${this.host}:${this.port}/${this.appName}/${this.rootApi}/`
 };
 
 /*
