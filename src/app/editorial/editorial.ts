@@ -4,5 +4,4 @@ export class Editorial {
   }
   get id(): number { return this.idA; }
   get name(): string { return this.nameA; }
-
 }

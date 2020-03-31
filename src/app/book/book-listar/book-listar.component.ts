@@ -10,7 +10,7 @@ import { BookService } from '../book.service';
 export class BookListarComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
-  private books: Array<Book>;
+  books: Array<Book>;
 
   getBooks(): void {
     this.bookService.getBooks()
