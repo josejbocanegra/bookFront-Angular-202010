@@ -13,9 +13,9 @@ export class BookService {
   private apiUrl = environment.baseUrl + 'books';
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<Book[]> {
-    console.log(`Url back: ${this.apiUrl}`)
-    return this.http.get<Book[]>(this.apiUrl);
+  getBooks(): Observable<Array<Book>> {
+    console.log(`Url back: ${this.apiUrl}`);
+    return this.http.get<Array<Book>>(this.apiUrl);
   }
 
 }
