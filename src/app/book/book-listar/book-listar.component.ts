@@ -22,8 +22,4 @@ export class BookListarComponent implements OnInit {
     this.getBooks();
   }
 
-  darNombre(name:string) {
-    return name.normalize();
-  }
-
 }
