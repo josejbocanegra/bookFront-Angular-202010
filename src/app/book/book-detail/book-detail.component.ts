@@ -13,7 +13,13 @@ export class BookDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => console.log(this.bookDetail));
+    setTimeout(() => console.log(this.bookDetail.id));
+  }
+
+  strToDate(publishingdate: string): Date {
+    console.log(publishingdate);
+    const dateNoTime: string[] = publishingdate.split('T');
+    return new Date(dateNoTime[0]);
   }
 
 }

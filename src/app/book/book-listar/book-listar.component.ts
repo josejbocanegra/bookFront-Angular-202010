@@ -18,11 +18,11 @@ export class BookListarComponent implements OnInit {
     this.bookService.getBooks()
       .subscribe(books => {
         this.books = books;
-      });
+      }).add( () => { console.log(this.books)});
   }
 
   onSelected(b: Book): void {
-    console.log(`se seleccionó el libro con id ${b.id}`);
+    console.log(`se seleccionó el libro  ${b.id}`);
     this.selected = true;
     this.selectedBook = b;
   }
