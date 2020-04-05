@@ -11,6 +11,8 @@ export class BookListarComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   books: Array<Book>;
+  selectedBook: Book;
+  selected = false;
 
   getBooks(): void {
     this.bookService.getBooks()
@@ -18,6 +20,13 @@ export class BookListarComponent implements OnInit {
         this.books = books;
       });
   }
+
+  onSelected(b: Book): void {
+    console.log(`se seleccionó el libro con id ${b.id}`);
+    this.selected = true;
+    this.selectedBook = b;
+  }
+
   ngOnInit() {
     this.getBooks();
   }

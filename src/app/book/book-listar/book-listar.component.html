@@ -1,10 +1,19 @@
 <div class="container-fluid">
-  <div class="row p-5">
-      <div class="col" *ngFor="let b of books">
-          <figure class="figure">
-              <img class="img-fluid" src='{{b.image}}'/>
-              <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
-          </figure>
+  <div class="row p-2">
+    <div class="col border">
+      <div *ngIf="selected">
+        <app-book-detail [bookDetail] = "selectedBook"></app-book-detail>
       </div>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="col" *ngFor="let b of books">
+      <figure class="figure">
+        <a (click)="onSelected(b)">
+          <img class="img-fluid" src='{{b.image}}' />
+        </a>
+        <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
+      </figure>
+    </div>
   </div>
 </div>
