@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Book } from '../book';
+import { BookDetail } from '../bookDetail';
 
 @Component({
   selector: 'app-book-detail',
@@ -8,12 +8,12 @@ import { Book } from '../book';
 })
 export class BookDetailComponent implements OnInit {
 
-  @Input() bookDetail: Book;
+  @Input() bookDetail: BookDetail;
 
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => console.log(this.bookDetail.id));
+    console.log(this.bookDetail.id);
   }
 
   strToDate(publishingdate: string): Date {
@@ -21,5 +21,4 @@ export class BookDetailComponent implements OnInit {
     const dateNoTime: string[] = publishingdate.split('T');
     return new Date(dateNoTime[0]);
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { BookService } from '../book.service';
+import { BookDetail } from '../bookDetail';
 
 @Component({
   selector: 'app-book-listar',
@@ -10,8 +11,8 @@ import { BookService } from '../book.service';
 export class BookListarComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
-  books: Array<Book>;
-  selectedBook: Book;
+  books: Array<BookDetail>;
+  selectedBook: BookDetail;
   selected = false;
 
   getBooks(): void {
@@ -21,7 +22,7 @@ export class BookListarComponent implements OnInit {
       }).add( () => { console.log(this.books)});
   }
 
-  onSelected(b: Book): void {
+  onSelected(b: BookDetail): void {
     console.log(`se seleccionó el libro  ${b.id}`);
     this.selected = true;
     this.selectedBook = b;
