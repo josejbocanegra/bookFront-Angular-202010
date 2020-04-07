@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { BookDetail } from './bookDetail';
-
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
-  private apiUrl = environment.baseUrl + 'books';
+  private apiUrl = environment.baseUrl + 'book';
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Array<BookDetail>> {
-    console.log(`Url back: ${this.apiUrl}`);
-    return this.http.get<Array<BookDetail>>(this.apiUrl);
+    return this.http.get<Array<BookDetail>>(this.apiUrl).pipe(
+      catchError(err => {
+        console.log(`En el servicio: ${err.error}`);
+        return throwError(err);
+      }));
+
   }
 
 }

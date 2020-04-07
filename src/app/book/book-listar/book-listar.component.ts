@@ -17,9 +17,7 @@ export class BookListarComponent implements OnInit {
 
   getBooks(): void {
     this.bookService.getBooks()
-      .subscribe(books => {
-        this.books = books;
-      }).add( () => { console.log(this.books)});
+      .subscribe(books => this.books = books, error=> console.log(`En subscribe error ${error.error}`));
   }
 
   onSelected(b: BookDetail): void {
