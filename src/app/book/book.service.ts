@@ -10,15 +10,11 @@ import { catchError } from 'rxjs/operators';
 })
 export class BookService {
 
-  private apiUrl = environment.baseUrl + 'book';
+  private apiUrl = environment.baseUrl + 'books';
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<Array<BookDetail>> {
-    return this.http.get<Array<BookDetail>>(this.apiUrl).pipe(
-      catchError(err => {
-        console.log(`En el servicio: ${err.error}`);
-        return throwError(err);
-      }));
+    return this.http.get<Array<BookDetail>>(this.apiUrl);
   }
 
 }
