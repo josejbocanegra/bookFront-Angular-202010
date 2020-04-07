@@ -19,7 +19,6 @@ export class BookService {
         console.log(`En el servicio: ${err.error}`);
         return throwError(err);
       }));
-
   }
 
 }
