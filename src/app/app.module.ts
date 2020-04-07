@@ -1,9 +1,8 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
+import { HttpErrorInterceptor } from './interceptors/http-error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,7 +22,6 @@ import { AuthorModule } from './author/author.module';
     BookModule,
     EditorialModule,
     AuthorModule,
-    NgbModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-bottom-right',

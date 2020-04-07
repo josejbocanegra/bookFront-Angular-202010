@@ -27,11 +27,11 @@ export class HttpErrorInterceptor extends HttpErrorResponse {
               errMsg = `${error.status}, "No hay conexión con el servidor"`;
               errorType = 'Major Error';
             } else {
-              errMsg = `${error.status}: ${error.error}`;
+              errMsg = `${error.status}: ${error.error} : ${error.url}`;
             }
             this.toastrService.error(errMsg, errorType, { closeButton: true });
           }
-          console.log(errMsg);
+          console.log(errMsg+' '+ error.url);
           return throwError(errMsg);
         })
       )
