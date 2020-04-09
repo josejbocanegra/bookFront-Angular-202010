@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class=row>
+    <div class="col-2">
+      <div *ngFor="let a of authors" class="card">
+        <figure class="figure">
+          <img src='{{a.image}}' class="card-img-top" alt="{{a.name }}" (click)="onSelected(a)" />
+          <figcaption class="title-caption text-center">{{a.name}}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="col">
+      <div *ngIf="selected">
+        <app-author-detail [authorDetail]="selectedAuthor"> </app-author-detail>
+      </div>
+    </div>
+  </div>
+</div>

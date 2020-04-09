@@ -10,7 +10,8 @@
     <div class="col" *ngFor="let b of books">
       <figure class="figure">
         <img class="img-fluid" src='{{b.image}}' (click)="onSelected(b)" />
-        <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
+        <figcaption class="title-caption text-center">{{b.name}}.</figcaption>
+        <p class="text-center" *ngFor="let a of b.authors"><a routerLink="/authors/{{a.id}}">{{a.name}}</a></p>
       </figure>
     </div>
   </div>

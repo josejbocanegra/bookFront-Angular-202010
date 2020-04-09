@@ -5,20 +5,21 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/http-error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRouting } from './app-routing';
 
-import { AppComponent } from './app.component';
 import { BookModule } from './book/book.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { AuthorModule } from './author/author.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRouting,
     BookModule,
     EditorialModule,
     AuthorModule,

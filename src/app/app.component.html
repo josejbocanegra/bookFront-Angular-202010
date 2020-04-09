@@ -1,2 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#76919C;">
+  <a class="navbar-brand" href="#">
+    <div class="form-inline">
+      <img id="logo" src="../assets/booksIcon.png" class="center-block" width="100" height="100" />
+      <div class="col">
+        <div class="row-sm-4">
+          <h2 class="mainTitle f1">B O O K L Y </h2>
+        </div>
+        <div class="row-sm-3">
+          <h5 class="mainTitle f1">A World of Books At Home</h5>
+        </div>
+      </div>
+    </div>
+  </a>
 
-<app-book-listar></app-book-listar>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Menu a recursos principales -->
+  <div class="navbar-nav mr-auto mt-0">
+    <a id="books-navbar-item" class="nav-item nav-link active" routerLink="/books/list">Books</a>
+    <a id="authors-navbar-item" class="nav-item nav-link" routerLink="/authors/list">Authors</a>
+    <a id="editorials-navbar-item" class="nav-item nav-link" routerLink="/editorials/list">Editorials</a>
+  </div>
+
+</nav>
+
+<!-- Main Router Outlet -->
+<div class="container-fluid" id="principal">
+  <div class="row">
+    <div class="col">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <p class="navbar-text text-center">
+      <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text">© Ejemplo Desarrollo de Sw
+        en Equipos </span>
+      <a routerLink="/book/list">Bookly</a>
+    </p>
+  </div>
+</footer>
