@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthorService } from '../author.service';
 import { AuthorDetail } from '../author-detail';
 
@@ -19,7 +19,7 @@ export class AuthorDetailComponent implements OnInit {
   ) {
   }
 
-    authorId : number;
+    authorId: number;
     getAuthorDetail(): void {
       this.authorService.getAuthorDetail(this.authorId)
         .subscribe(authorDetail => {

@@ -9,7 +9,7 @@
     <div class="col">
       <dl>
         <dt> Authors</dt>
-        <dd *ngFor = "let a of bookDetail.authors">{{a.name}}</dd>
+        <dd *ngFor="let a of bookDetail.authors"><a routerLink="../../authors/{{a.id}}">{{a.name}}</a></dd>
         <dt> ISBN</dt>
         <dd>{{bookDetail.isbn}}</dd>
         <hr>

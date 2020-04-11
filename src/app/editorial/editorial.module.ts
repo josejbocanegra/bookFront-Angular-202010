@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditorialComponent } from './editorial.component';
+import { EditorialRoutingModule} from './editorial-routing.module';
+import { EditorialListComponent } from './editorial-list/editorial-list.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    EditorialRoutingModule
   ],
-  declarations: [EditorialComponent]
+  declarations: [EditorialListComponent],
+  exports: [EditorialListComponent]
 })
 export class EditorialModule { }

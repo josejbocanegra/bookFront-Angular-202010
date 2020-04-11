@@ -1,0 +1,12 @@
+<div class="row p-2 border" *ngFor="let e of editorials">
+  <div class="col-1"><h5>{{e.name}}</h5>
+  </div>
+  <div class="col-1" *ngFor="let b of e.books">
+    <figure class="figure">
+      <a routerLink="../../books/{{b.id}}"><img class="img-thumbnail" src='{{b.image}}'/></a>
+
+      <figcaption class="title-caption text-center">{{b.name}}.</figcaption>
+
+    </figure>
+  </div>
+</div>
