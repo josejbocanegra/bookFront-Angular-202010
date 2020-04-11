@@ -26,14 +26,14 @@ export class BookDetailComponent implements OnInit {
         this.bookDetail = bookDetail;
       });
   }
-ngOnInit() {
-  if (this.bookDetail === undefined) {
-    console.log('routerLink');
-    this.bookId = +this.route.snapshot.paramMap.get('id');
-    this.getBookDetail();
+  ngOnInit() {
+    if (this.bookDetail === undefined) {
+      console.log('routerLink');
+      this.bookId = +this.route.snapshot.paramMap.get('id');
+      this.getBookDetail();
 
-  } else { console.log(this.bookDetail.id); }
-}
+    } else { console.log(this.bookDetail.id); }
+  }
 
 
   strToDate(publishingdate: string): Date {

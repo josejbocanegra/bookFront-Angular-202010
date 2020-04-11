@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EditorialListComponent } from './editorial-list/editorial-list.component';
 
-
-
 const routes: Routes = [{
   path: 'editorials',
   children: [

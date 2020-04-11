@@ -1,11 +1,5 @@
 <div class="container-fluid">
-  <div class="row p-2">
-    <div class="col border">
-      <div *ngIf="selected">
-        <app-book-detail [bookDetail]="selectedBook"></app-book-detail>
-      </div>
-    </div>
-  </div>
+
   <div class="row p-2">
     <div class="col-1" *ngFor="let b of books">
       <figure class="figure">
@@ -13,6 +7,13 @@
         <figcaption class="title-caption text-center">{{b.name}}.</figcaption>
         <p class="text-center" *ngFor="let a of b.authors"><a routerLink="/authors/{{a.id}}">{{a.name}}</a></p>
       </figure>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="col border">
+      <div *ngIf="selected">
+        <app-book-detail [bookDetail]="selectedBook"></app-book-detail>
+      </div>
     </div>
   </div>
 </div>
