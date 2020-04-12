@@ -6,7 +6,7 @@
         <img class="img-fluid" src="{{bookDetail.image}}" />
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <dl>
         <dt> Authors</dt>
         <dd *ngFor="let a of bookDetail.authors"><a routerLink="../../authors/{{a.id}}">{{a.name}}</a></dd>
@@ -23,5 +23,9 @@
         <dd>{{bookDetail.description}}</dd>
       </dl>
     </div>
+    <div class="col-4">
+      <dt *ngIf="bookDetail.reviews.length > 0">
+        Reviews of the book </dt>
+        <app-book-reviews [bookReviews]="bookDetail.reviews"></app-book-reviews>
+    </div>
   </div>
-</div>

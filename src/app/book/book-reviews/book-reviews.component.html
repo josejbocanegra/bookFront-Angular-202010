@@ -1,0 +1,11 @@
+
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let review of bookReviews">
+        <td><span id="review-reviewed"><b>{{review.name}}</b></span><span>: </span><span
+            id="review-description">{{review.description}}</span><br><span
+            id="review-reviewed"><i>{{review.source}}</i></span></td>
+      </tr>
+    </tbody>
+  </table>
+

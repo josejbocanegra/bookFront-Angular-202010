@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit,  Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BookDetail } from '../bookDetail';
 import { BookService } from '../book.service';
+
 
 @Component({
   selector: 'app-book-detail',
@@ -14,25 +15,31 @@ export class BookDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private bookService: BookService
   ) {
   }
 
+  isCollapsed = true;
   bookId: number;
+
   getBookDetail(): void {
     this.bookService.getBookDetail(this.bookId)
       .subscribe(bookDetail => {
         this.bookDetail = bookDetail;
       });
   }
+
   ngOnInit() {
     if (this.bookDetail === undefined) {
       console.log('routerLink');
       this.bookId = +this.route.snapshot.paramMap.get('id');
       this.getBookDetail();
 
-    } else { console.log(this.bookDetail.id); }
+    } else {
+      console.log('Input');
+      console.log(this.bookDetail.id);
+      console.log(`reviews: ${this.bookDetail.reviews.length} `);
+    }
   }
 
 
@@ -41,4 +48,5 @@ export class BookDetailComponent implements OnInit {
     const dateNoTime: string[] = publishingdate.split('T');
     return new Date(dateNoTime[0]);
   }
+
 }

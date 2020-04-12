@@ -20,7 +20,7 @@ export class BookListarComponent implements OnInit {
   }
 
   onSelected(b: BookDetail): void {
-    console.log(`se seleccionó el libro  ${b.id}`);
+    console.log(`se seleccionó el libro  ${b.id} con reviews ${b.reviews.length}`);
     this.selected = true;
     this.selectedBook = b;
   }
