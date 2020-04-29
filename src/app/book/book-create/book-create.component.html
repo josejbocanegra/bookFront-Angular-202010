@@ -1,0 +1,34 @@
+<form [formGroup]="bookForm" (ngSubmit)="createBook(bookForm.value)">
+	<div class="form-group mx-sm-3 mb-2">
+		<label for="name">
+      Name
+    </label>
+		<input novalidate
+    id="name"
+    class="form-control"
+      formControlName="name"
+      placeholder="Book Name">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="bookForm.get('name').hasError('required') && bookForm.get('name').touched">
+			Name required
+		</div>
+	</div>
+
+	<div class="form-group  mx-sm-3 mb-2">
+		<label for="description">
+      Description
+    </label>
+		<input id="description" type="text"
+     class="form-control"
+     formControlName="description"
+     placeholder="Book Description">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="bookForm.get('description').hasError('required') && bookForm.get('description').touched">
+			Description required
+		</div>
+	</div>
+	<button class="button mx-sm-3 mb-2" type="submit" [disabled]="bookForm.invalid">Create</button>
+
+</form>

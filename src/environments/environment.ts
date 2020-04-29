@@ -4,8 +4,8 @@
 
 //const host = '157.253.238.75';
 //const port = '8084';
-const host = 'localhost';
-const port = '8080';
+const host = '157.253.238.75';
+const port = '8084';
 const appName = 'frontstepbystep-api';
 const rootApi = 'api';
 

@@ -7,5 +7,11 @@ export class AuthorDetail extends Author {
   /**
    * Los libros del author
    */
-  books: Book[];
+  private booksA: Book[];
+  constructor( books?: Book[]) {
+    super();
+    this.booksA = books;
+  }
+
+  get books(): Book[] {return this.booksA; }
 }

@@ -1,10 +1,22 @@
 export class Author {
 
-  constructor(private idA: number, private nameA: string, private birthDateA: any, private imageA: string,
-              private descriptionA: string) {
+  private idA: number;
+  private nameA: string;
+  private birthDateA: string;
+  private imageA: string;
+  private descriptionA: string;
 
+  constructor(id?: number, name?: string, birthDate?: string, image?: string,
+    description?: string) {
+    this.idA = id;
+    this.nameA = name;
+    this.birthDateA = birthDate;
+    this.imageA = image;
+    this.descriptionA = description;
   }
+
   get id(): number { return this.idA; }
+
 
   /**
    * The author's name
@@ -14,7 +26,7 @@ export class Author {
   /**
    * Fecha de nacimiento del autor. Estamos utilizando de tipo  string.
    */
-  get birthDate(): any { return this.birthDateA; }
+  get birthDate(): string {return this.birthDateA; }
 
   /**
    * The location of the author's profile picture
