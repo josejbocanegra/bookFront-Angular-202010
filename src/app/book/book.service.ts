@@ -32,6 +32,7 @@ export class BookService {
    * @returns The book with its new id if it was created, false if it wasn't
    */
   createBookD(book): Observable<BookDetail> {
+
     return this.http.post<BookDetail>(this.apiUrl + '/booksD', book);
   }
 }

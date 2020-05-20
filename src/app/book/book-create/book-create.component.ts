@@ -29,8 +29,12 @@ export class BookCreateComponent {
    * The list of every author in the BookStore
    */
   allAuthors: Author[];
+
+
   /**
-   * The list of all the editorials in the BookStore
+   *
+   * @type {Editorial[]}
+   * @memberof BookCreateComponent
    */
   editorials: Editorial[];
   constructor(
@@ -59,16 +63,25 @@ export class BookCreateComponent {
     const dateB: Date = new Date(a);
     bookC.publishingdate = dateB;
     bookC.authors = this.authors;
+    bookC.editorial = this.buscarId(bookC.editorial, this.editorials);
 
+    bookC.reviews = [];
     this.bookService.createBookD(bookC)
       .subscribe(book => {
         this.toastrService.success('The book was created successfully');
-        this.router.navigate(['/book/' + book.id]);
+        this.router.navigate(['/books/list' ]);
 
         this.bookForm.reset();
       }, err => {
         this.toastrService.error(err, 'Error');
       });
+  }
+  buscarId(pal, list) {
+    for (const i of list) {
+      if (i.name === pal) {
+        return i;
+      }
+    }
   }
   /**
    * Cancels the creation of the new book
@@ -113,6 +126,7 @@ const aut = this.bookForm.get('authors').value;
 for (const auth of this.allAuthors) {
   if (aut === auth.name) {
     this.authors.push(auth);
+
   }
 }
 
@@ -122,6 +136,7 @@ for (const auth of this.allAuthors) {
 removeAuthor(author): void {
   const index = this.authors.indexOf(author);
   this.authors.splice(index, 1);
+
 }
 
 ngOnInit(): void {
