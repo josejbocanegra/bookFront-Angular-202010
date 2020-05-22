@@ -31,11 +31,6 @@ export class BookCreateComponent {
   allAuthors: Author[];
 
 
-  /**
-   *
-   * @type {Editorial[]}
-   * @memberof BookCreateComponent
-   */
   editorials: Editorial[];
   constructor(
     private bookService: BookService,

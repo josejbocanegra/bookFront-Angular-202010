@@ -1,0 +1,19 @@
+<h1>Create Editorial</h1>
+<form [formGroup]="editorialForm" (ngSubmit)="createEditorial(editorialForm.value)">
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="name">
+      Editorial Name
+    </label>
+    <input novalidate id="name" class="form-control" formControlName="name" placeholder="Editorial Name">
+  </div>
+  <div class="alert alert-danger alert-dismissible fade show" *ngIf="editorialForm.get('name').hasError('required') &&
+      editorialForm.get('name').touched">
+    Name required
+  </div>
+
+  <div class="row form-inline justify-content-center align-self-center">
+    <button type="submit" class="btn btn-primary" [disabled]="editorialForm.invalid">Create</button>
+  </div>
+
+</form>

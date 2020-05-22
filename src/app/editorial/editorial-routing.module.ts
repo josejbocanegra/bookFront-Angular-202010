@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EditorialListComponent } from './editorial-list/editorial-list.component';
+import { EditorialCreateComponent } from './editorial-create/editorial-create.component';
 
 const routes: Routes = [{
   path: 'editorials',
@@ -10,6 +11,10 @@ const routes: Routes = [{
       path: 'list',
       component: EditorialListComponent
     },
+    {
+      path: 'create',
+      component: EditorialCreateComponent
+    }
   ]
 }];
 

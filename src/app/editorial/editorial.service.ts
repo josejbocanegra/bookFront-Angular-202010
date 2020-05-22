@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { EditorialDetail } from './editorialDetail';
+import { Editorial } from './editorial';
 
 
 @Injectable({
@@ -16,6 +17,16 @@ export class EditorialService {
   getEditorials(): Observable<Array<EditorialDetail>> {
     return this.http.get<Array<EditorialDetail>>(this.apiUrl);
   }
+
+  /**
+   * Creates an editorial
+   * @param editorial The editorial which will be created
+   * @returns The confirmation of the editorial's creation
+   */
+  createEditorial(editorial): Observable<Editorial> {
+    return this.http.post<Editorial>(this.apiUrl , editorial);
+  }
+
 
 }
 
