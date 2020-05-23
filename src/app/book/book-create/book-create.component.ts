@@ -39,7 +39,9 @@ export class BookCreateComponent {
     private editorialService: EditorialService,
     private toastrService: ToastrService,
     private router: Router,
+
   ) {
+
     this.bookForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       authors: ['', [Validators.required]],
@@ -54,8 +56,9 @@ export class BookCreateComponent {
    * Creates a new book
    */
   createBook(bookC: BookDetail) {
-    const a = this.bookForm.controls.publishingdate.value;
-    const dateB: Date = new Date(a);
+    const toDate = this.bookForm.controls.publishingdate.value;
+    const dateB: Date = new Date(toDate);
+
     bookC.publishingdate = dateB;
     bookC.authors = this.authors;
     bookC.editorial = this.buscarId(bookC.editorial, this.editorials);
@@ -119,10 +122,12 @@ addAuthor(): void {
 
 const aut = this.bookForm.get('authors').value;
 for (const auth of this.allAuthors) {
-  if (aut === auth.name) {
+
+  if (aut === auth.name && !this.authors.includes(auth) ) {
     this.authors.push(auth);
 
   }
+
 }
 
 

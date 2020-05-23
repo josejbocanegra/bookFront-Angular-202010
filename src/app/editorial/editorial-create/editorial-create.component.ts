@@ -15,8 +15,7 @@ export class EditorialCreateComponent implements OnInit {
     private editorialService: EditorialService,
     private toastrService: ToastrService,
     private router: Router,
-    private formBuilder: FormBuilder)
-    {
+    private formBuilder: FormBuilder) {
         this.editorialForm = this.formBuilder.group({
         name: ['', [Validators.required, Validators.minLength(2)]],
 
@@ -29,7 +28,7 @@ export class EditorialCreateComponent implements OnInit {
       */
      editorialForm: FormGroup;
 
-     createEditorial(editorial){
+     createEditorial(editorial) {
       this.editorialService.createEditorial(editorial)
       .subscribe((editorials) => {
           this.toastrService.success('The editorial was created', 'Editorial creation');
