@@ -24,4 +24,15 @@ export class BookService {
   getBookDetail(bookId): Observable<BookDetail> {
     return this.http.get<BookDetail>(`${this.apiUrl}/${bookId}`);
   }
+
+
+  /**
+   * Creates a new book
+   * @param book The new book
+   * @returns The book with its new id if it was created, false if it wasn't
+   */
+  createBookD(book): Observable<BookDetail> {
+
+    return this.http.post<BookDetail>(this.apiUrl + '/booksD', book);
+  }
 }

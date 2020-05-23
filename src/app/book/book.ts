@@ -1,4 +1,3 @@
-
 import { Editorial } from '../editorial/editorial';
 
 export class Book {
@@ -8,13 +7,13 @@ export class Book {
   private isbnA: string;
   private descriptionA: string;
   private imageA: string;
-  private publishingdateA: string;
+  private publishingdateA: Date;
   private editorialA: Editorial;
 
 
   constructor(id?: number, name?: string, isbn?: string,
-    description?: string, image?: string, publishingdate?: string,
-    editorial?: Editorial) {
+              description?: string, image?: string, publishingdate?: Date,
+              editorial?: Editorial) {
     this.idA = id;
     this.nameA = name;
     this.publishingdateA = publishingdate;
@@ -25,10 +24,24 @@ export class Book {
 
   get id(): number { return this.idA; }
   get name(): string { return this.nameA; }
+  set name(pName) { this.nameA = pName; }
+
   get isbn(): string { return this.isbnA; }
+  set isbn(pIsbn) { this.isbnA = pIsbn; }
+
   get description(): string { return this.descriptionA; }
+  set description(pDescription) {this.descriptionA = pDescription; }
+
   get image(): string { return this.imageA; }
-  get publishingdate(): string { return this.publishingdateA; }
+  set image(pImage) {this.imageA = pImage; }
+
+  get publishingdate(): Date { return this.publishingdateA; }
+  set publishingdate( pPubDate) {this.publishingdateA = pPubDate; }
+
   get editorial(): Editorial { return this.editorialA; }
+  set editorial(pEditorial) {this.editorialA = pEditorial; }
+
+
+
 
 }
