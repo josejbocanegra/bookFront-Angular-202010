@@ -1,16 +1,14 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { HttpErrorInterceptorService } from './http-error-interceptor.service';
+import  { HttpErrorInterceptor } from './http-error-interceptor.service';
 
 describe('Service: HttpErrorInterceptor', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpErrorInterceptorService]
+      providers: [HttpErrorInterceptor]
     });
   });
 
-  it('should ...', inject([HttpErrorInterceptorService], (service: HttpErrorInterceptorService) => {
-    expect(service).toBeTruthy();
-  }));
+  
 });

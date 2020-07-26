@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorDetailComponent } from './author-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe('AuthorDetailComponent', () => {
   let component: AuthorDetailComponent;
@@ -8,6 +10,7 @@ describe('AuthorDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, RouterTestingModule],
       declarations: [ AuthorDetailComponent ]
     })
     .compileComponents();
@@ -19,7 +22,4 @@ describe('AuthorDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

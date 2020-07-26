@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorListComponent } from './author-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 describe('AuthorListComponent', () => {
   let component: AuthorListComponent;
@@ -8,7 +10,11 @@ describe('AuthorListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthorListComponent ]
+      imports: [HttpClientModule, ToastrModule.forRoot()],
+      declarations: [ AuthorListComponent ],
+      providers: [
+        {provide: ToastrService, useClass: ToastrService}
+      ]
     })
     .compileComponents();
   }));
