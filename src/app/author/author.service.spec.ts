@@ -9,6 +9,7 @@ import { Author } from "./author";
 
 import faker from "faker";
 import { environment } from "../../environments/environment";
+import { AuthorDetail } from "./author-detail";
 
 describe("AuthorService", () => {
   let injector: TestBed;
